@@ -43,7 +43,7 @@
 
     <dependency>
       <groupId>dev.langchain4j</groupId>
-      <artifactId>langchain4j-spring-boot-starter</artifactId>
+      <artifactId>langchain4j-spring-boot4-starter</artifactId>
       <version>1.19.0-beta29</version>
       <scope>compile</scope>
     </dependency>
