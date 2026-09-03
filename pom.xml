@@ -18,7 +18,6 @@
     <java.version>25</java.version>
     <lombok.version>1.18.38</lombok.version>
     <langchain4j.version>1.19.0-beta29</langchain4j.version>
-    <langchain4j-ollama.version>1.19.0</langchain4j-ollama.version>
   </properties>
 
   <dependencies>
@@ -42,8 +41,8 @@
 
     <dependency>
       <groupId>dev.langchain4j</groupId>
-      <artifactId>langchain4j-ollama</artifactId>
-      <version>${langchain4j-ollama.version}</version>
+      <artifactId>langchain4j-ollama-spring-boot4-starter</artifactId>
+      <version>${langchain4j.version}</version>
       <scope>compile</scope>
     </dependency>
 
