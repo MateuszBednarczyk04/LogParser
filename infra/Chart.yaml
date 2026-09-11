@@ -1,0 +1,5 @@
+apiVersion: v2
+name: ollama
+description: Helm chart for log parser
+version: 0.0.1
+appVersion: "latest"

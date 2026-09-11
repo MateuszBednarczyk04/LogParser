@@ -1,0 +1,13 @@
+replicaCount: 1
+
+image:
+  repository: ollama/ollama
+  tag: latest
+
+service:
+  type: ClusterIP
+  port: 11434
+
+persistence:
+  storage: 20Gi
+  accessMode: ReadWriteOnce
