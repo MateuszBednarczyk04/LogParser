@@ -4,7 +4,7 @@ metadata:
   name: {{ .Release.Name }}-ollama-pvc
 spec:
   accessModes:
-    - {{ .Values.persistence.accessMode }}
+    - {{ .Values.ollama.persistence.accessMode }}
   resources:
     requests:
-      storage: {{ .Values.persistence.storage }}
+      storage: {{ .Values.ollama.persistence.storage }}

@@ -3,9 +3,9 @@ kind: Service
 metadata:
   name: {{ .Release.Name }}-ollama-service
 spec:
-  type: {{ .Values.service.type }}
+  type: {{ .Values.ollama.service.type }}
   selector:
     app: {{ .Release.Name }}-ollama
   ports:
-    - port: {{ .Values.service.port }}
+    - port: {{ .Values.ollama.service.port }}
       targetPort: 11434

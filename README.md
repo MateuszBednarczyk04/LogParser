@@ -29,20 +29,36 @@ curl -X POST http://localhost:8080/logparser/api/v1/analyser \
 
 ## Running Ollama in Kubernetes
 
-The [infra](infra) directory contains the manifests for deploying Ollama to the cluster (PVC, Deployment, Service).
+The [infra](infra) directory contains a Helm chart that deploys Ollama and Qdrant to the cluster.
 
-1. Apply the manifests:
+1. Install the chart:
 
 ```bash
-kubectl apply -f infra/ollama-storage.yaml
-kubectl apply -f infra/ollama-deployment.yaml
-kubectl apply -f infra/ollama-service.yaml
+helm install ollama-dev infra
+```
+
+This creates the Ollama `Deployment`, `PersistentVolumeClaim` and `Service`, along with the Qdrant `StatefulSet` and `Service`. Chart defaults (image tags, storage sizes, replica counts, etc.) can be overridden with `--set` or a custom values file, e.g.:
+
+```bash
+helm install ollama-dev infra --set ollama.persistence.storage=10Gi
+```
+
+To apply changes after editing the chart:
+
+```bash
+helm upgrade ollama-dev infra
+```
+
+To remove the release:
+
+```bash
+helm uninstall ollama-dev
 ```
 
 2. Ollama is exposed as a `ClusterIP` service, so it's not reachable from outside the cluster — you need to port-forward it:
 
 ```bash
-kubectl port-forward svc/ollama-service 11434:11434
+kubectl port-forward svc/ollama-dev-ollama-service 11434:11434
 ```
 
 Once that's running, Ollama will be available locally at `http://localhost:11434`, matching the configuration in `application.yaml`.
