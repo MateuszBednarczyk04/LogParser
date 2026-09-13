@@ -17,7 +17,7 @@
   <properties>
     <java.version>25</java.version>
     <lombok.version>1.18.38</lombok.version>
-    <langchain4j.version>1.19.0-beta29</langchain4j.version>
+    <langchain4j.version>1.20.0-beta30</langchain4j.version>
   </properties>
 
   <dependencies>
@@ -42,6 +42,13 @@
     <dependency>
       <groupId>dev.langchain4j</groupId>
       <artifactId>langchain4j-ollama-spring-boot4-starter</artifactId>
+      <version>${langchain4j.version}</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>dev.langchain4j</groupId>
+      <artifactId>langchain4j-easy-rag</artifactId>
       <version>${langchain4j.version}</version>
       <scope>compile</scope>
     </dependency>

@@ -8,6 +8,10 @@ langchain4j:
       base-url: http://localhost:11434
       model-name: llama3.2:1b
 
+
 server:
   servlet:
     context-path: /logparser/api
+rag:
+  documents:
+    path: ${RAG_DOCUMENTS_PATH}
